@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import plotly.graph_objs as go
 import plotly.offline as pyo
+import os
 
 app = Flask(__name__)
 
@@ -15,4 +16,6 @@ def index():
     return render_template("index.html", chart=chart_html)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host=host, port=port)
