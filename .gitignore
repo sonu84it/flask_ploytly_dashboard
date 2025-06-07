@@ -1,0 +1,10 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
